@@ -13,7 +13,7 @@ resource "ibm_is_subnet" "subnet" {
 }
 
 data "ibm_resource_group" "resource_group" {
-  name = (var.resource_group != null ? var.resource_group : "default")
+  name = "Default"
 }
 
 locals {
