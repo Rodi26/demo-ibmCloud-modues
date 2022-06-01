@@ -17,7 +17,7 @@ data "ibm_resource_group" "resource_group" {
 }
 
 data "ibm_is_ssh_key" "ssh_key_id" {
-    name = var.ssh_key
+    name = var.ssh_keys
 }
 
 module "instance" {
@@ -29,7 +29,7 @@ module "instance" {
   location                  = var.location
   image                     = var.image
   profile                   = var.profile
-  ssh_keys                  = var.ssh_keys
+  ssh_keys                  = [data.ibm_is_ssh_key.ssh_key_id.id]
   user_data                 = var.user_data
   volumes                   = var.volumes
   tags                      = var.tags
