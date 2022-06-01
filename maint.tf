@@ -29,7 +29,7 @@ locals {
 }
 
 module "instance" {
-  source = "app.terraform.io/rodolphefontaine-demo/vpc-vsi/ibm"
+  source = "app.terraform.io/rodolphefontaine-demo/vpc-vsi2/ibm"
 
   name                      = var.name
   vpc_id                    = ibm_is_vpc.vpc.id
