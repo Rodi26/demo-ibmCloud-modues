@@ -26,7 +26,7 @@ module "instance" {
   location                  = var.location
   image                     = var.image
   profile                   = var.profile
-  ssh_keys                  = local.ssh_keys
+  ssh_keys                  = var.ssh_keys
   user_data                 = var.user_data
   volumes                   = var.volumes
   tags                      = var.tags
