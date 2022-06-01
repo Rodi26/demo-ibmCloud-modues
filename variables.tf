@@ -82,5 +82,5 @@ variable "boot_volume" {
     snapshot   = string
     encryption = string
   }))
-  default = 1
+  default = null
 }
