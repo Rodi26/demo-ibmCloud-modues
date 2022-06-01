@@ -1,4 +1,3 @@
-
 variable "name" {
   description = "Name of the Instance"
   type        = string
@@ -74,13 +73,3 @@ variable "network_interfaces" {
   }))
   default = null
 }
-/*
-variable "boot_volume" {
-  description = "List of boot volume that are to be attached to the instance"
-  type = list(object({
-    name       = string
-    snapshot   = string
-    encryption = string
-  }))
-  default = null
-}*/
