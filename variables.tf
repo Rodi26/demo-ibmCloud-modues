@@ -62,14 +62,3 @@ variable "tags" {
   default     = null
 }
 
-variable "network_interfaces" {
-  description = "List of network_interfaces that are to be attached to the instance"
-  type = list(object({
-    allow_ip_spoofing    = string
-    subnet               = string
-    interface_name       = string
-    security_groups      = list(string)
-    primary_ipv4_address = string
-  }))
-  default = null
-}

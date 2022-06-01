@@ -16,17 +16,6 @@ data "ibm_resource_group" "resource_group" {
   name = "Default"
 }
 
-locals {
-  primary_network_interface = [{
-    allow_ip_spoofing    = false
-    interface_name       = ""
-    primary_ipv4_address = ""
-    subnet               = ibm_is_subnet.subnet.id
-    security_groups      = [ibm_is_vpc.vpc.default_security_group]
-    }
-  ]
-  ssh_keys = tolist(setsubtract(split(",", var.ssh_keys), [""]))
-}
 
 module "instance" {
   source = "app.terraform.io/rodolphefontaine-demo/vpc-vsi2/ibm"
@@ -38,9 +27,7 @@ module "instance" {
   image                     = var.image
   profile                   = var.profile
   ssh_keys                  = local.ssh_keys
-  primary_network_interface = local.primary_network_interface
   user_data                 = var.user_data
-  network_interfaces        = var.network_interfaces
   volumes                   = var.volumes
   tags                      = var.tags
 }
