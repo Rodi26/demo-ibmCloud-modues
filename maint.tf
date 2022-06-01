@@ -16,6 +16,9 @@ data "ibm_resource_group" "resource_group" {
   name = "Default"
 }
 
+data "ibm_is_ssh_key" "ssh_key_id" {
+    name = var.ssh_key
+}
 
 module "instance" {
   source = "app.terraform.io/rodolphefontaine-demo/vpc-vsi2/ibm"
