@@ -22,7 +22,7 @@ data "ibm_is_ssh_key" "ssh_key_id" {
 
 module "instance" {
   source = "app.terraform.io/rodolphefontaine-demo/vpc-vsi2/ibm"
-  version = "1.0.4"
+  version = "1.0.5"
   name                      = var.name
   vpc_id                    = ibm_is_vpc.vpc.id
   resource_group_id         = data.ibm_resource_group.resource_group.id
