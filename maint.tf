@@ -40,7 +40,9 @@ module "instance" {
   ssh_keys                  = local.ssh_keys
   primary_network_interface = local.primary_network_interface
   user_data                 = var.user_data
+  /*
   boot_volume               = var.boot_volume
+  */
   network_interfaces        = var.network_interfaces
   volumes                   = var.volumes
   tags                      = var.tags

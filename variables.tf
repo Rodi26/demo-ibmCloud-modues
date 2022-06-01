@@ -74,7 +74,7 @@ variable "network_interfaces" {
   }))
   default = null
 }
-
+/*
 variable "boot_volume" {
   description = "List of boot volume that are to be attached to the instance"
   type = list(object({
@@ -83,4 +83,4 @@ variable "boot_volume" {
     encryption = string
   }))
   default = null
-}
+}*/
