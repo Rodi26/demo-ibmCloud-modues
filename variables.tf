@@ -16,11 +16,13 @@ variable "subnet_name" {
 variable "location" {
   description = "Instance zone"
   type        = string
+  default =  "us-south-1"
 }
 
 variable "image" {
   description = "Image ID for the instance"
   type        = string
+  default = "vpctestexample"
 }
 
 variable "profile" {
