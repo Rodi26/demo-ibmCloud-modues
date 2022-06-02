@@ -27,7 +27,7 @@ module "instance" {
   vpc_id                    = ibm_is_vpc.vpc.id
   resource_group_id         = data.ibm_resource_group.resource_group.id
   location                  = var.location
-  image                     = var.image
+  #image                     = var.image
   profile                   = var.profile
   ssh_keys                  = [data.ibm_is_ssh_key.ssh_key_id.id]
   user_data                 = var.user_data
